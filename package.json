@@ -1,0 +1,26 @@
+{
+  "name": "yoda-seo-tips",
+  "version": "1.0.0",
+  "description": "SEO tips from Yoda",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/skyjur/yoda-seo-tips.git"
+  },
+  "keywords": [
+    "SEO",
+    "Yoda",
+    "just-for-fun",
+    "joke",
+    "funny"
+  ],
+  "author": "Skirmantas Jurgaitis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyjur/yoda-seo-tips/issues"
+  },
+  "homepage": "https://github.com/skyjur/yoda-seo-tips#readme"
+}
