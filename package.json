@@ -22,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/skyjur/yoda-seo-tips/issues"
   },
-  "homepage": "https://github.com/skyjur/yoda-seo-tips#readme"
+  "homepage": "https://github.com/skyjur/yoda-seo-tips#readme",
+  "dependencies": {
+    "@types/cheerio": "^0.22.7",
+    "@types/mocha": "^2.2.48",
+    "@types/sinon": "^4.3.0",
+    "cheerio": "^1.0.0-rc.2",
+    "mocha": "^5.0.4",
+    "sinon": "^4.4.2"
+  }
 }
