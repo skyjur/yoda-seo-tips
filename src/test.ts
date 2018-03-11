@@ -40,7 +40,7 @@ describe('Html Validator Framework', () => {
             await validator.process(__dirname + '/sample.html', outFileName);
             assert.fail('Exception not raised')
         } catch(e) {
-            assert.equal(e.message && e.message.substr(0, 10), 'ENOENT:');
+            assert.equal(e.message && e.message.substr(0, 7), 'ENOENT:');
         }
     })
 });
