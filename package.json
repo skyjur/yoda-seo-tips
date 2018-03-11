@@ -2,9 +2,10 @@
   "name": "yoda-seo-tips",
   "version": "1.0.0",
   "description": "SEO tips from Yoda",
-  "main": "dist/index.js",
+  "main": "dist",
+  "types": "dist",
   "scripts": {
-    "test": "mocha"
+    "test": "tsc && mocha"
   },
   "repository": {
     "type": "git",
@@ -24,10 +25,12 @@
   },
   "homepage": "https://github.com/skyjur/yoda-seo-tips#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
     "@types/cheerio": "^0.22.7",
     "@types/mocha": "^2.2.48",
     "@types/sinon": "^4.3.0",
-    "cheerio": "^1.0.0-rc.2",
     "mocha": "^5.0.4",
     "sinon": "^4.4.2"
   }
