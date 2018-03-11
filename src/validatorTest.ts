@@ -17,19 +17,19 @@ describe('Html Validator Framework', () => {
 
     it('Should load html from file', async () => {
         let output = outputStub();
-        await validator.process(__dirname + '/sample.html', output);
+        await validator.process('sample1.html', output);
         assert.equal(output.get(), 'test rule 1\ntest rule 2\n');
     });
     
     it('Should load html from stream', async () => {
         let output = outputStub();
-        await validator.process(createReadStream(__dirname + '/sample.html'), output);
+        await validator.process(createReadStream('sample1.html'), output);
         assert.equal(output.get(), 'test rule 1\ntest rule 2\n');
     });
 
     it('Should write output to file', async () => {
         let outFileName = __filename + '.out';
-        await validator.process(__dirname + '/sample.html', outFileName);
+        await validator.process('sample1.html', outFileName);
         assert.equal(readFileSync(outFileName).toString(), 'test rule 1\ntest rule 2\n');
         unlinkSync(outFileName);
     });
@@ -37,7 +37,7 @@ describe('Html Validator Framework', () => {
     it('Should throw IO error due to invalid file name', async () => {
         let outFileName = '/?*".out';
         try {
-            await validator.process(__dirname + '/sample.html', outFileName);
+            await validator.process('sample1.html', outFileName);
             assert.fail('Exception not raised')
         } catch(e) {
             assert.equal(e.message && e.message.substr(0, 7), 'ENOENT:');

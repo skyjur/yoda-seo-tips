@@ -49,7 +49,7 @@ class StreamWriter {
 
 class ConsoleWriter {
     async write(msg: string) {
-        console.log(msg);
+        console.log(msg.replace(/\s*$/, ''));
     }
 
     async close() {}

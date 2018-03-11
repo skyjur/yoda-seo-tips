@@ -14,7 +14,7 @@ export const mustHaveTitle = mustHaveElement('head > title', () =>
     `<title> tag this document should have`);
 
 export const mustHaveDescription = mustHaveElement('head > meta[name=description]', () =>
-    `<meta name="descriptions"> tag this docuument should have`);
+    `<meta name="descriptions"> tag this document should have`);
 
 export const mustHaveKeywords = mustHaveElement('head > meta[name=keywords]', () =>
     `<meta name="keywords"> tag this document should have`);
