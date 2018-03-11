@@ -2,9 +2,9 @@
   "name": "yoda-seo-tips",
   "version": "1.0.0",
   "description": "SEO tips from Yoda",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
