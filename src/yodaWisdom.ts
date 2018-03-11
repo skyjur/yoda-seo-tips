@@ -1,4 +1,5 @@
 import {mustHaveAttribute, mustHaveElement, mustHaveNoMoreThan} from './rules';
+import { Rule } from './validator';
 
 // Yoda talks in Object-Subject-Verb grammar, trying to immitate it in the messages here
 // https://en.wikipedia.org/wiki/Object%E2%80%93subject%E2%80%93verb
@@ -18,18 +19,26 @@ export const mustHaveDescription = mustHaveElement('head > meta[name=description
 export const mustHaveKeywords = mustHaveElement('head > meta[name=keywords]', () =>
     `<meta name="keywords"> tag this document should have`);
 
-export const notTooManyStrongs = mustHaveNoMoreThan('strong', 15, (n) =>
-    `${n} <strong> tags I count. More than 15 should be not.`);
+export const notTooManyStrongs = (howMany: number) => mustHaveNoMoreThan('strong', howMany, (n) =>
+    `${n} <strong> tags I count. More than ${howMany} should be not.`);
 
 export const onlyOneH1 = mustHaveNoMoreThan('h1', 1, (n) =>
     `${n} <h1> tags I count. One only chosen there should be.`)
 
-export const yodaWisdom = [
-    imgMustHaveAlt,
-    aMustHaveRel,
-    mustHaveTitle,
-    mustHaveDescription,
-    mustHaveKeywords,
-    notTooManyStrongs,
-    onlyOneH1
-];
+export type YodaWisdomConfig = {
+    maxStrongTags?: number,
+    extraRules?: Rule[]
+};
+
+export function yodaWisdom(config: YodaWisdomConfig = {}): Rule[] {
+    return [
+        imgMustHaveAlt,
+        aMustHaveRel,
+        mustHaveTitle,
+        mustHaveDescription,
+        mustHaveKeywords,
+        notTooManyStrongs(config.maxStrongTags || 15),
+        onlyOneH1,
+        ... (config.extraRules || [])
+    ];
+}
